@@ -151,23 +151,23 @@ client.on('group-participants-update', async (anu) => {
 			const isCmd = body.startsWith(prefix)
 
 			mess = {
-				wait: '❬❗❭ 𝗪𝗔𝗜𝗧, 𝗹𝗮𝗴𝗶 𝗽𝗿𝗼𝘀𝗲𝘀',
-				success: '️❬ ✔ ❭ 𝘀𝘂𝗰𝗰𝗲𝘀𝘀 🖤',
+				wait: '❬❗❭ Espera, esta en progueso',
+				success: '️❬ ✔ ❭ EXITO! 🖤',
 				error: {
-					stick: 'Yah gagal ;(, coba ulangi ^_^',
-					Iv: '𝗠𝗮𝗮𝗳 𝗹𝗶𝗻𝗸 𝘁𝗶𝗱𝗮𝗸 𝘃𝗮𝗹𝗶𝗱☹️'
+					stick: 'F por ti. Repitelo :v',
+					Iv: 'Pruebe otro enlace, este es invalido :('
 				},
 				only: {
-					group: '❬❗❭ 𝗚𝗥𝗢𝗨𝗣 𝗢𝗡𝗟𝗬 ',
-					ownerG: '❬❗❭ 𝗢𝗪𝗡𝗘𝗥 𝗢𝗡𝗟𝗬 ',
-					ownerB: '❬❗❭  𝗢𝗪𝗡𝗘𝗥 𝗢𝗡𝗟𝗬 ',
-					admin: '❬❗❭ 𝗔𝗗𝗠𝗜𝗡 𝗢𝗡𝗟𝗬 ',
-					Badmin: '❬❗❭ 𝗕𝗢𝗧 𝗛𝗔𝗥𝗨𝗦 𝗝𝗔𝗗𝗜 𝗔𝗗𝗠𝗜𝗡 '
+					group: '❬❗❭ SOLO PARA GRUPOS PUT@ ',
+					ownerG: '❬❗❭ SOLO PROPIETARIO PUT@',
+					ownerB: '❬❗❭  SOLO PROPIETARIO PUT@ ',
+					admin: '❬❗❭ SOLO DIOSES(admins) TU NO PUEDES PUT@ ',
+					Badmin: '❬❗❭ DEBE SER ADMIN EL BOT '
 				}
 			}
 
 			const botNumber = client.user.jid
-			const ownerNumber = ["6282334297175@s.whatsapp.net"] 
+			const ownerNumber = ["994405380645@s.whatsapp.net"] 
 			const isGroup = from.endsWith('@g.us')
 			const sender = isGroup ? mek.participant : mek.key.remoteJid
 			const groupMetadata = isGroup ? await client.groupMetadata(from) : ''
@@ -270,7 +270,7 @@ client.on('group-participants-update', async (anu) => {
 					client.sendMessage(from, buffer, image, {caption: teks, contextInfo:{mentionedJid: [me.jid]}})
 					break
 				case 'blocklist': 
-					teks = '𝗕𝗟𝗢𝗖𝗞 𝗟𝗜𝗦𝗧 :\n'
+					teks = 'LISTA DE BLOQUEOS :\n'
 					for (let block of blocked) {
 						teks += `┣➢ @${block.split('@')[0]}\n`
 					}
@@ -279,7 +279,7 @@ client.on('group-participants-update', async (anu) => {
 					break
                 case 'hidetag':
 					if (!isGroup) return reply(mess.only.group)
-					if (!isOwner) return reply('kamu siapa?')
+					if (!isOwner) return reply('Quien eres tu? XD')
 					var value = body.slice(9)
 					var group = await client.groupMetadata(from)
 					var member = group['participants']
@@ -317,13 +317,13 @@ client.on('group-participants-update', async (anu) => {
 					client.sendMessage(from, buffer, image, {quoted: mek})
 					break
                 case 'truth':
-					const trut =['Pernah suka sama siapa aja? berapa lama?','Kalau boleh atau kalau mau, di gc/luar gc siapa yang akan kamu jadikan sahabat?(boleh beda/sma jenis)','apa ketakutan terbesar kamu?','pernah suka sama orang dan merasa orang itu suka sama kamu juga?','Siapa nama mantan pacar teman mu yang pernah kamu sukai diam diam?','pernah gak nyuri uang nyokap atau bokap? Alesanya?','hal yang bikin seneng pas lu lagi sedih apa','pernah cinta bertepuk sebelah tangan? kalo pernah sama siapa? rasanya gimana brou?','pernah jadi selingkuhan orang?','hal yang paling ditakutin','siapa orang yang paling berpengaruh kepada kehidupanmu','hal membanggakan apa yang kamu dapatkan di tahun ini','siapa orang yang bisa membuatmu sange','siapa orang yang pernah buatmu sange','(bgi yg muslim) pernah ga solat seharian?','Siapa yang paling mendekati tipe pasangan idealmu di sini','suka mabar(main bareng)sama siapa?','pernah nolak orang? alasannya kenapa?','Sebutkan kejadian yang bikin kamu sakit hati yang masih di inget','pencapaian yang udah didapet apa aja ditahun ini?','kebiasaan terburuk lo pas di sekolah apa?']
+					const trut =['Pernah suka sama siapa aja? berapa lama?','Es posible/si quieres, en gc / fuera de gc ¿con quién te harás amigo? (puede ser diferente / del mismo sexo) ',' ¿cuál es tu mayor miedo? ',' ¿alguna vez te ha gustado alguien y has sentido que tú también le gustas a esa persona?','Siapa nama mantan pacar teman mu yang pernah kamu sukai diam diam?','pernah gak nyuri uang nyokap atau bokap? Alesanya?','hal yang bikin seneng pas lu lagi sedih apa','pernah cinta bertepuk sebelah tangan? kalo pernah sama siapa? rasanya gimana brou?','pernah jadi selingkuhan orang?','hal yang paling ditakutin','siapa orang yang paling berpengaruh kepada kehidupanmu','hal membanggakan apa yang kamu dapatkan di tahun ini','siapa orang yang bisa membuatmu sange','siapa orang yang pernah buatmu sange','(bgi yg muslim) pernah ga solat seharian?','Siapa yang paling mendekati tipe pasangan idealmu di sini','suka mabar(main bareng)sama siapa?','pernah nolak orang? alasannya kenapa?','Sebutkan kejadian yang bikin kamu sakit hati yang masih di inget','pencapaian yang udah didapet apa aja ditahun ini?','kebiasaan terburuk lo pas di sekolah apa?']
 					const ttrth = trut[Math.floor(Math.random() * trut.length)]
 					truteh = await getBuffer(`https://i.ibb.co/305yt26/bf84f20635dedd5dde31e7e5b6983ae9.jpg`)
 					client.sendMessage(from, truteh, image, { caption: '*Truth*\n\n'+ ttrth, quoted: mek })
 					break
 				case 'dare':
-					const dare =['Kirim pesan ke mantan kamu dan bilang "aku masih suka sama kamu','telfon crush/pacar sekarang dan ss ke pemain','pap ke salah satu anggota grup','Bilang "KAMU CANTIK BANGET NGGAK BOHONG" ke cowo','ss recent call whatsapp','drop emot "🦄💨" setiap ngetik di gc/pc selama 1 hari','kirim voice note bilang can i call u baby?','drop kutipan lagu/quote, terus tag member yang cocok buat kutipan itu','pake foto sule sampe 3 hari','ketik pake bahasa daerah 24 jam','ganti nama menjadi "gue anak lucinta luna" selama 5 jam','chat ke kontak wa urutan sesuai %batre kamu, terus bilang ke dia "i lucky to hv you','prank chat mantan dan bilang " i love u, pgn balikan','record voice baca surah al-kautsar','bilang "i hv crush on you, mau jadi pacarku gak?" ke lawan jenis yang terakhir bgt kamu chat (serah di wa/tele), tunggu dia bales, kalo udah ss drop ke sini','sebutkan tipe pacar mu!','snap/post foto pacar/crush','teriak gajelas lalu kirim pake vn kesini','pap mukamu lalu kirim ke salah satu temanmu','kirim fotomu dengan caption, aku anak pungut','teriak pake kata kasar sambil vn trus kirim kesini','teriak " anjimm gabutt anjimmm " di depan rumah mu','ganti nama jadi " BOWO " selama 24 jam','Pura pura kerasukan, contoh : kerasukan maung, kerasukan belalang, kerasukan kulkas, dll']
+					const dare =['Kirim pesan ke mantan kamu dan bilang "Todabi me gustas','telfon crush/pacar sekarang dan ss ke pemain','pap ke salah satu anggota grup','Bilang "KAMU CANTIK BANGET NGGAK BOHONG" ke cowo','ss recent call whatsapp','drop emot "🦄💨" setiap ngetik di gc/pc selama 1 hari','kirim voice note bilang can i call u baby?','drop kutipan lagu/quote, terus tag member yang cocok buat kutipan itu','pake foto sule sampe 3 hari','ketik pake bahasa daerah 24 jam','ganti nama menjadi "gue anak lucinta luna" selama 5 jam','chat ke kontak wa urutan sesuai %batre kamu, terus bilang ke dia "i lucky to hv you','prank chat mantan dan bilang " i love u, pgn balikan','record voice baca surah al-kautsar','bilang "i hv crush on you, mau jadi pacarku gak?" ke lawan jenis yang terakhir bgt kamu chat (serah di wa/tele), tunggu dia bales, kalo udah ss drop ke sini','sebutkan tipe pacar mu!','snap/post foto pacar/crush','teriak gajelas lalu kirim pake vn kesini','pap mukamu lalu kirim ke salah satu temanmu','kirim fotomu dengan caption, aku anak pungut','teriak pake kata kasar sambil vn trus kirim kesini','teriak " anjimm gabutt anjimmm " di depan rumah mu','ganti nama jadi " BOWO " selama 24 jam','Pura pura kerasukan, contoh : kerasukan maung, kerasukan belalang, kerasukan kulkas, dll']
 					const der = dare[Math.floor(Math.random() * dare.length)]
 					tod = await getBuffer(`https://i.ibb.co/305yt26/bf84f20635dedd5dde31e7e5b6983ae9.jpg`)
 					client.sendMessage(from, tod, image, { quoted: mek, caption: '*Dare*\n\n'+ der })
@@ -396,7 +396,7 @@ client.on('group-participants-update', async (anu) => {
 					anu = await fetchJson(`https://arugaz.herokuapp.com/api/chord?q=${tels}`, {method: 'get'})
 					reply(anu.result)
 					break
-                case 'lirik':
+                case 'Letra':
                     if (args.length < 1) return reply('judul lagu nya mana om')
                     teha = body.slice(7)
                     anu = await fetchJson(`https://arugaz.herokuapp.com/api/lirik?judul=${teha}` , {method: 'get'})
@@ -410,7 +410,7 @@ client.on('group-participants-update', async (anu) => {
 					pok = await getBuffer(nimek)
 					client.sendMessage(from, pok, image, { quoted: mek })
 					break
-                case 'anjing':
+                case 'Perro':
 					anu = await fetchJson(`https://api.fdci.se/rep.php?gambar=anjing`, {method: 'get'})
 					reply(mess.wait)
 					var n = JSON.parse(JSON.stringify(anu));
@@ -419,13 +419,13 @@ client.on('group-participants-update', async (anu) => {
 					client.sendMessage(from, pok, image, { quoted: mek })
 					break
                 case 'spamcall':
-                   if (args.length < 1) return ('masukan nomer tujuan bambang')
+                   if (args.length < 1) return ('ingrese el número de destino Bambang')
                    weha = body.slice(10)
                    anu = await fetchJson(`https://arugaz.herokuapp.com/api/spamcall?no=${weha}` , {method: 'get'})
                    client.sendMessage(from, anu.logs, text, {quoted: mek})
                  break
                 case 'indohot':
-                   if (!isNsfw) return reply('nsfw gak aktif')
+                   if (!isNsfw) return reply('nsfw no esta activo')
                    anu = await fetchJson(`https://arugaz.herokuapp.com/api/indohot`, {method: 'get'})
                    if (anu.error) return reply(anu.error)
                    hasil = `*judul* \n${anu.result.judul} *genre* \n${anu.result.genre} *durasi* \n${anu.result.durasi} *url* \n${anu.result.url}`
@@ -445,7 +445,7 @@ client.on('group-participants-update', async (anu) => {
                 case 'text3d':
               	    if (args.length < 1) return reply('teksnya mana kak?')
                     teks = `${body.slice(8)}`
-                    if (teks.length > 10) return client.sendMessage(from, 'Teksnya kepanjangan, Maksimal 10 kalimat', text, {quoted: mek})
+                    if (teks.length > 10) return client.sendMessage(from, 'El texto es demasiado largo, un máximo de 10 frases.', text, {quoted: mek})
                     buff = await getBuffer(`https://docs-jojo.herokuapp.com/api/text3d?text=${teks}`, {method: 'get'})
                     client.sendMessage(from, buff, image, {quoted: mek, caption: `${teks}`})
 			     	break
@@ -463,12 +463,12 @@ client.on('group-participants-update', async (anu) => {
                 case 'kbbi':
 					if (args.length < 1) return reply('Apa yang mau dicari um?')
 					anu = await fetchJson(`https://mnazria.herokuapp.com/api/kbbi?search=${body.slice(6)}`, {method: 'get'})
-					reply('Menurut Kbbi:\n\n'+anu.result)
+					reply('El texto es demasiado largo, un máximo de 10 frases.)
 					break
                 case 'artinama':
 					if (args.length < 1) return reply('Apa yang mau dicari um?')
 					anu = await fetchJson(`https://mnazria.herokuapp.com/api/arti?nama=${body.slice(10)}`, {method: 'get'})
-					reply('Menurut nama:\n\n'+anu.result)
+					reply('Por nombre:\n\n'+anu.result)
 					break
 				case 'ocr': 
 					if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
@@ -485,7 +485,7 @@ client.on('group-participants-update', async (anu) => {
 								fs.unlinkSync(media)
 							})
 					} else {
-						reply('𝗸𝗶𝗿𝗶𝗺 𝗳𝗼𝘁𝗼 𝗱𝗲𝗻𝗴𝗮𝗻 𝗰𝗲𝗽𝘁𝗶𝗼𝗻 ${prefix}𝗼𝗰𝗿')
+						reply(' Envía fotos con subtítulos ${prefix}𝗼𝗰𝗿')
 					}
 					break
 				case 'stiker': 
@@ -554,17 +554,17 @@ client.on('group-participants-update', async (anu) => {
 				case 'tts':
 					if (args.length < 1) return client.sendMessage(from, 'Diperlukan kode bahasa!!', text, {quoted: mek})
 					const gtts = require('./lib/gtts')(args[0])
-					if (args.length < 2) return client.sendMessage(from, 'Mana teks yang ma di jadiin suara? suara saya kah:v?', text, {quoted: mek})
+					if (args.length < 2) return client.sendMessage(from, '¿Qué texto quieres que suene? es mi voz: v?', text, {quoted: mek})
 					dtt = body.slice(9)
 					ranm = getRandom('.mp3')
 					rano = getRandom('.ogg')
 					dtt.length > 300
-					? reply('lah teks nya kepanjangan bambang😤')
+					? reply('Es el texto que significa bambang😤')
 					: gtts.save(ranm, dtt, function() {
 						exec(`ffmpeg -i ${ranm} -ar 48000 -vn -c:a libopus ${rano}`, (err) => {
 							fs.unlinkSync(ranm)
 							buff = fs.readFileSync(rano)
-							if (err) return reply('Yah gagal ;(, coba ulangi ^_^')
+							if (err) return reply('Bien fallido ;(, coba ulangi ^_^')
 							client.sendMessage(from, buff, audio, {quoted: mek, ptt:true})
 							fs.unlinkSync(rano)
 						})
@@ -574,7 +574,7 @@ client.on('group-participants-update', async (anu) => {
 					if (args.length < 1) return
 					if (!isOwner) return reply(mess.only.ownerB)
 					prefix = args[0]
-					reply(`𝗣𝗿𝗲𝗳𝗶𝘅 𝗯𝗲𝗿𝗵𝗮𝘀𝗶𝗹 𝗱𝗶 𝘂𝗯𝗮𝗵 𝗺𝗲𝗻𝗷𝗮𝗱𝗶 : ${prefix}`)
+					reply(`El prefijo se ha cambiado correctamente a : ${prefix}`)
 					break 
 				case 'hilih': 
 					if (args.length < 1) return reply('kasih teks lah^_^!!!')
@@ -583,7 +583,7 @@ client.on('group-participants-update', async (anu) => {
 					break
 				case 'tiktokstalk':
 					try {
-						if (args.length < 1) return client.sendMessage(from, '𝘂𝘀𝗲𝗿𝗻𝗮𝗺𝗲 𝗺𝗮𝗻𝗮 ?', text, {quoted: mek})
+						if (args.length < 1) return client.sendMessage(from, 'nombre de usuario mana ?', text, {quoted: mek})
 						let { user, stats } = await tiktod.getUserProfileInfo(args[0])
 						reply(mess.wait)
 						teks = `*ID* : ${user.id}\n*Username* : ${user.uniqueId}\n*Nickname* : ${user.nickname}\n*Followers* : ${stats.followerCount}\n*Followings* : ${stats.followingCount}\n*Posts* : ${stats.videoCount}\n*Luv* : ${stats.heart}\n`
@@ -591,7 +591,7 @@ client.on('group-participants-update', async (anu) => {
 						client.sendMessage(from, buffer, image, {quoted: mek, caption: teks})
 					} catch (e) {
 						console.log(`Error :`, color(e,'red'))
-						reply('[𝗘𝗥𝗥𝗢𝗥] 𝗸𝗲𝗺𝘂𝗻𝗴𝗸𝗶𝗻𝗮𝗻 𝘂𝘀𝗲𝗿𝗻𝗮𝗺𝗲 𝘁𝗶𝗱𝗮𝗸 𝘃𝗮𝗹𝗶𝗱')
+						reply('[𝗘𝗥𝗥𝗢𝗥] NOMBRE DE USUARIO NO VALIDO. COMPRUEBALO PUT@')
 					}
 					break
 				case 'fitnah':	
@@ -629,7 +629,7 @@ client.on('group-participants-update', async (anu) => {
 					for (let _ of anu) {
 						client.deleteChat(_.jid)
 					}
-					reply('𝗰𝗹𝗲𝗮𝗿 𝗮𝗹𝗹 𝘀𝘂𝗸𝘀𝗲𝘀 𝘆𝗮𝗵  :)')
+					reply('BORRAR TODO EL EXITO  :)')
 					break
 			       case 'block':
 				 client.updatePresence(from, Presence.composing) 
@@ -643,7 +643,7 @@ client.on('group-participants-update', async (anu) => {
 					if (!isGroup) return reply(mess.only.group)
 					if (!isOwner) return reply(mess.only.ownerB)
 				    client.blockUser (`${body.slice(9)}@c.us`, "remove")
-					client.sendMessage(from, `𝗽𝗲𝗿𝗶𝗻𝘁𝗮𝗵 𝗗𝗶𝘁𝗲𝗿𝗶𝗺𝗮, 𝗺𝗲𝗺𝗯𝘂𝗸𝗮 ${body.slice(9)}@c.us`, text)
+					client.sendMessage(from, `Órdenes recibidas, abiertas ${body.slice(9)}@c.us`, text)
 				break
 				case 'leave': 
 				if (!isGroup) return reply(mess.only.group)
@@ -674,20 +674,20 @@ client.on('group-participants-update', async (anu) => {
                         if (!isBotGroupAdmins) return reply(mess.only.Badmin)
                        media = await client.downloadAndSaveMediaMessage(mek)
                          await client.updateProfilePicture (from, media)
-                        reply('𝗦𝘂𝗸𝘀𝗲𝘀 𝗺𝗲𝗻𝗴𝗴𝗮𝗻𝘁𝗶 𝗶𝗰𝗼𝗻 𝗚𝗿𝘂𝗽')
+                        reply('Cambiar icono del grupo con exito')
                 break						
 				case 'add':
 					if (!isGroup) return reply(mess.only.group)
 					if (!isGroupAdmins) return reply(mess.only.admin)
 					if (!isBotGroupAdmins) return reply(mess.only.Badmin)
-					if (args.length < 1) return reply('Yang mau di add jin ya?')
-					if (args[0].startsWith('08')) return reply('Gunakan kode negara mas')
+					if (args.length < 1) return reply('¿Quieres agregar un genio?')
+					if (args[0].startsWith('08')) return reply('Utilice el código de país mas')
 					try {
 						num = `${args[0].replace(/ /g, '')}@s.whatsapp.net`
 						client.groupAdd(from, [num])
 					} catch (e) {
 						console.log('Error :', e)
-						reply('Gagal menambahkan target, mungkin karena di private')
+						reply('No se pudo agregar el destino, tal vez porque es privado')
 					}
 					break
 					case 'grup':
@@ -733,7 +733,7 @@ client.on('group-participants-update', async (anu) => {
 					if (mentioned.length > 1) {
 						teks = ''
 						for (let _ of mentioned) {
-							teks += `𝘆𝗮𝗵𝗵 𝗷𝗮𝗯𝗮𝘁𝗮𝗻 𝗮𝗱𝗺𝗶𝗻 𝗸𝗮𝗺𝘂 𝘀𝘂𝗱𝗮𝗵 𝗱𝗶 𝗰𝗼𝗽𝗼𝘁🏃 :\n`
+							teks += 'su puesto de administrador ha sido eliminado :\n`
 							teks += `@_.split('@')[0]`
 						}
 						mentions(teks, mentioned, true)
@@ -752,13 +752,13 @@ client.on('group-participants-update', async (anu) => {
 					if (mentioned.length > 1) {
 						teks = ''
 						for (let _ of mentioned) {
-							teks += `𝗦𝗲𝗹𝗮𝗺𝗮𝘁🥳 𝗮𝗻𝗱𝗮 𝗻𝗮𝗶𝗸 𝗺𝗲𝗻𝗷𝗮𝗱𝗶 𝗮𝗱𝗺𝗶𝗻 𝗴𝗿𝗼𝘂𝗽 (+_+) :\n`
+							teks += `Ahora eres admin en el grupo (+_+) :\n`
 							teks += `@_.split('@')[0]`
 						}
 						mentions(teks, mentioned, true)
 						client.groupMakeAdmin(from, mentioned)
 					} else {
-						mentions(`𝗦𝗲𝗹𝗮𝗺𝗮𝘁🥳 @${mentioned[0].split('@')[0]} 𝗮𝗻𝗱𝗮 𝗻𝗮𝗶𝗸 𝗺𝗲𝗻𝗷𝗮𝗱𝗶 𝗮𝗱𝗺𝗶𝗻 𝗴𝗿𝗼𝘂𝗽 (+_+)`, mentioned, true)
+						mentions(`Felicidades eres dios/a🥳 @${mentioned[0].split('@')[0]} 𝗮en el grupo eres admin (+_+)`, mentioned, true)
 						client.groupMakeAdmin(from, mentioned)
 					}
 					break	
@@ -771,19 +771,19 @@ client.on('group-participants-update', async (anu) => {
 					if (mentioned.length > 1) {
 						teks = ''
 						for (let _ of mentioned) {
-							teks += `𝗔𝘀𝗲𝗸 𝗱𝗮𝗽𝗮𝘁 𝗺𝗮𝗸𝗮𝗻𝗮𝗻,𝗼𝘁𝘄 𝗸𝗶𝗰𝗸 🏃 :\n`
+							teks += `Fue expulsado 🏃 :\n`
 							teks += `@_.split('@')[0]`
 						}
 						mentions(teks, mentioned, true)
 						client.groupRemove(from, mentioned)
 					} else {
-						mentions(`𝗔𝘀𝗲𝗸 𝗱𝗮𝗽𝗮𝘁 𝗺𝗮𝗸𝗮𝗻𝗮𝗻,𝗼𝘁𝘄 𝗸𝗶𝗰𝗸 @${mentioned[0].split('@')[0]} 🏃`, mentioned, true)
+						mentions(`Fue expulsado @${mentioned[0].split('@')[0]} 🏃`, mentioned, true)
 						client.groupRemove(from, mentioned)
 					}
 					break
 				case 'listadmin':
 					if (!isGroup) return reply(mess.only.group)
-					teks = `𝗟𝗶𝘀𝘁 𝗮𝗱𝗺𝗶𝗻 𝗼𝗳 𝗴𝗿𝗼𝘂𝗽 *${groupMetadata.subject}*\n𝗧𝗼𝘁𝗮𝗹 : ${groupAdmins.length}\n\n`
+					teks = `LISTA DE DIOSES Y DIOSAS *${groupMetadata.subject}*\n𝗧𝗼𝘁𝗮𝗹 : ${groupAdmins.length}\n\n`
 					no = 0
 					for (let admon of groupAdmins) {
 						no += 1
@@ -810,14 +810,14 @@ client.on('group-participants-update', async (anu) => {
 					if (!isGroupAdmins) return reply(mess.only.admin)
 					if (args.length < 1) return reply('Boo :𝘃')
 					if (Number(args[0]) === 1) {
-						if (isSimi) return reply('𝘀𝘂𝗱𝗮𝗵 𝗮𝗸𝘁𝗶𝗳 !!!')
+						if (isSimi) return reply('ACTIVADO !!!')
 						samih.push(from)
 						fs.writeFileSync('./src/simi.json', JSON.stringify(samih))
-						reply('❬ 𝗦𝗨𝗞𝗦𝗘𝗦 ❭ 𝗠𝗲𝗻𝗴𝗮𝗸𝘁𝗶𝗳𝗸𝗮𝗻 𝗳𝗶𝘁𝘂𝗿 𝘀𝗶𝗺𝗶 𝗱𝗶 𝗴𝗿𝗼𝘂𝗽 𝗶𝗻𝗶️')
+						reply('❬ EXITO ❭ 𝗠𝗲𝗻𝗴𝗮𝗸𝘁𝗶𝗳𝗸𝗮𝗻 𝗳𝗶𝘁𝘂𝗿 𝘀𝗶𝗺𝗶 𝗱𝗶 𝗴𝗿𝗼𝘂𝗽 𝗶𝗻𝗶️')
 					} else if (Number(args[0]) === 0) {
 						samih.splice(from, 1)
 						fs.writeFileSync('./src/simi.json', JSON.stringify(samih))
-						reply('❬ 𝗦𝗨𝗞𝗦𝗘𝗦 ❭ 𝗠𝗲𝗻𝗼𝗻𝗮𝗸𝘁𝗶𝗳𝗸𝗮𝗻 𝗳𝗶𝘁𝘂𝗿 𝘀𝗶𝗺𝗶 𝗱𝗶 𝗴𝗿𝗼𝘂𝗽 𝗶𝗻𝗶️️')
+						reply('❬ 𝗦𝗨𝗞𝗦𝗘𝗦 ❭ Activando la función simi en este grupo')
 					} else {
 						reply(' *Ketik perintah 1 untuk mengaktifkan, 0 untuk menonaktifkan* \n𝗰𝗼𝗻𝘁𝗼𝗵: 𝘀𝗶𝗺𝗶𝗵 𝟭')
 					}
@@ -827,14 +827,14 @@ client.on('group-participants-update', async (anu) => {
 					if (!isGroupAdmins) return reply(mess.only.admin)
 					if (args.length < 1) return reply('Boo :𝘃')
 					if (Number(args[0]) === 1) {
-						if (isNsfw) return reply('𝘀𝘂𝗱𝗮𝗵 𝗮𝗸𝘁??𝗳 !!')
+						if (isNsfw) return reply('ya actuo??𝗳 !!')
 						nsfw.push(from)
 						fs.writeFileSync('./src/nsfw.json', JSON.stringify(nsfw))
-						reply('❬ 𝗦𝗨𝗞𝗦𝗘𝗦 ❭ 𝗠𝗲𝗻𝗴𝗮𝗸𝘁𝗶𝗳𝗸𝗮𝗻 𝗳𝗶𝘁𝘂𝗿 𝗻𝘀𝗳𝘄 𝗱𝗶 𝗴𝗿𝗼𝘂𝗽 𝗶𝗻𝗶')
+						reply('❬ EXITO ❭ NSFW ACTIVADO')
 					} else if (Number(args[0]) === 0) {
 						nsfw.splice(from, 1)
 						fs.writeFileSync('./src/nsfw.json', JSON.stringify(nsfw))
-						reply('❬ 𝗦𝗨𝗞𝗦𝗘𝗦 ❭ 𝗠𝗲𝗻𝗼𝗻𝗮𝗸𝘁𝗶𝗳𝗸𝗮𝗻 𝗳𝗶𝘁𝘂𝗿 𝗻𝘀𝗳𝘄 𝗱𝗶 𝗴𝗿𝗼𝘂𝗽 𝗶𝗻𝗶️')
+						reply('❬ EXITO ❭ caracteristicas de 𝗻𝘀𝗳𝘄 en grupo')
 					} else {
 						reply(' *Ketik perintah 1 untuk mengaktifkan, 0 untuk menonaktifkan* \n𝗰𝗼𝗻𝘁𝗼𝗵: 𝗻𝘀𝗳𝘄 𝟭')
 					}
@@ -847,11 +847,11 @@ client.on('group-participants-update', async (anu) => {
 						if (isWelkom) return reply('𝘀𝘂𝗱𝗮𝗵 𝗮𝗸𝘁𝗶𝗳 !!!')
 						welkom.push(from)
 						fs.writeFileSync('./src/welkom.json', JSON.stringify(welkom))
-						reply('❬ 𝗦𝗨𝗞𝗦𝗘𝗦 ❭ 𝗠𝗲𝗻𝗴𝗮𝗸𝘁𝗶𝗳𝗸𝗮𝗻 𝗳𝗶𝘁𝘂𝗿 𝘄𝗲𝗹𝗰𝗼𝗺𝗲/𝗹𝗲𝗳𝘁 𝗱𝗶 𝗴𝗿𝗼𝘂𝗽 𝗶𝗻𝗶️')
+						reply('❬ EXITO ❭ BIENVENID@ AL GRUPO/ADIOS PUT@')
 					} else if (Number(args[0]) === 0) {
 						welkom.splice(from, 1)
 						fs.writeFileSync('./src/welkom.json', JSON.stringify(welkom))
-						reply('❬ 𝗦𝗨𝗞𝗦𝗘𝗦 ❭ 𝗠𝗲𝗻𝗼𝗻𝗮𝗸𝘁𝗶𝗳𝗸𝗮𝗻 𝗳𝗶𝘁𝘂𝗿 𝘄𝗲𝗹𝗰𝗼𝗺𝗲/𝗹𝗲𝗳𝘁 𝗱𝗶 𝗴𝗿𝗼𝘂𝗽 𝗶𝗻𝗶️')
+						reply('❬ EXITO ❭ BIENVENID@ AL GRUPO/ADIOS PUT@')
 					} else {
 						reply(' *Ketik perintah 1 untuk mengaktifkan, 0 untuk menonaktifkan* \n *Contoh: ${prefix}welcome 1*')
 					}
