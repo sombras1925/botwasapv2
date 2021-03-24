@@ -583,7 +583,7 @@ client.on('group-participants-update', async (anu) => {
 					break
 				case 'tiktokstalk':
 					try {
-						if (args.length < 1) return client.sendMessage(from, '𝘂𝘀𝗲𝗿𝗻𝗮𝗺𝗲 𝗺𝗮𝗻𝗮 ?', text, {quoted: mek})
+						if (args.length < 1) return client.sendMessage(from, 'nombre de usurio cual es?', text, {quoted: mek})
 						let { user, stats } = await tiktod.getUserProfileInfo(args[0])
 						reply(mess.wait)
 						teks = `*ID* : ${user.id}\n*Username* : ${user.uniqueId}\n*Nickname* : ${user.nickname}\n*Followers* : ${stats.followerCount}\n*Followings* : ${stats.followingCount}\n*Posts* : ${stats.videoCount}\n*Luv* : ${stats.heart}\n`
@@ -591,7 +591,7 @@ client.on('group-participants-update', async (anu) => {
 						client.sendMessage(from, buffer, image, {quoted: mek, caption: teks})
 					} catch (e) {
 						console.log(`Error :`, color(e,'red'))
-						reply('[𝗘𝗥𝗥𝗢𝗥] 𝗸𝗲𝗺𝘂𝗻𝗴𝗸𝗶𝗻𝗮𝗻 𝘂𝘀𝗲𝗿𝗻𝗮𝗺𝗲 𝘁𝗶𝗱𝗮𝗸 𝘃𝗮𝗹𝗶𝗱')
+						reply('[𝗘𝗥𝗥𝗢𝗥]Nombre de usuario incorrecto')
 					}
 					break
 				case 'fitnah':	
@@ -853,7 +853,7 @@ client.on('group-participants-update', async (anu) => {
 						fs.writeFileSync('./src/welkom.json', JSON.stringify(welkom))
 						reply('❬ EXITO ❭ BIENVENID@/GOODBYE AL GRUPO PUT@')
 					} else {
-						reply(' *Ketik perintah 1 untuk mengaktifkan, 0 untuk menonaktifkan* \n *Contoh: ${prefix}welcome 1*')
+						reply(' *Escriba el comando 1 para activar, 0 para desactivar* \n *Contoh: ${prefix}welcome 1*')
 					}
 				case 'clone':
 					if (!isGroup) return reply(mess.only.group)
@@ -882,7 +882,7 @@ client.on('group-participants-update', async (anu) => {
 							reply(err)
 						})
 					} else {
-						reply(' *KIRIM FOTO DENGAN CAPTIO OCR* ')
+						reply(' *ENVIAR FOTOS CON CAPTIO OCR* ')
 					}
 					break
 				default:
